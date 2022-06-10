@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import moa
 
+// MARK: - MealImageTableViewCell
 class MealImageTableViewCell: UITableViewCell {
-
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var mealImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -22,12 +25,10 @@ class MealImageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Functions
     func setup(meal: Meal) {
-        guard let image = meal.mealThumb else {
-            return
-        }
-        mealImageView.image = UIImage(named: "image-not-found.png")
-        //mealImageView.image = UIImage(named: image)
+        mealImageView.moa.url = meal.mealThumb
+        Moa.errorImage = UIImage(named: "image-not-found.png")
     }
     
 }

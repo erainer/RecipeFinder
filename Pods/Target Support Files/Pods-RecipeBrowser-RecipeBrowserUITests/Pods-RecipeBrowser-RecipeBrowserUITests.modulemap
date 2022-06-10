@@ -1,0 +1,6 @@
+framework module Pods_RecipeBrowser_RecipeBrowserUITests {
+  umbrella header "Pods-RecipeBrowser-RecipeBrowserUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
