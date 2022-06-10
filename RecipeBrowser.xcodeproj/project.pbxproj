@@ -29,6 +29,7 @@
 		0A8C879B285276A2001FD277 /* MealImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A8C8799285276A2001FD277 /* MealImageTableViewCell.xib */; };
 		0A8C87A42852B187001FD277 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C87A22852B187001FD277 /* Recipe+CoreDataClass.swift */; };
 		0A8C87A52852B187001FD277 /* Recipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C87A32852B187001FD277 /* Recipe+CoreDataProperties.swift */; };
+		0A8C87B22852D2D8001FD277 /* TestCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C87B12852D2D8001FD277 /* TestCoreData.swift */; };
 		193D459D7499E9D50E591521 /* Pods_RecipeBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75290EAEE1B6987DE3693256 /* Pods_RecipeBrowser.framework */; };
 		40E6CFB3CBEA287F1870E190 /* Pods_RecipeBrowser_RecipeBrowserUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247D746FA69B4D8C31E2D1A0 /* Pods_RecipeBrowser_RecipeBrowserUITests.framework */; };
 		FDE53A43E89A75F044CE224C /* Pods_RecipeBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECA8887F5D58FB243BB088A /* Pods_RecipeBrowserTests.framework */; };
@@ -79,6 +80,7 @@
 		0A8C8799285276A2001FD277 /* MealImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealImageTableViewCell.xib; sourceTree = "<group>"; };
 		0A8C87A22852B187001FD277 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0A8C87A32852B187001FD277 /* Recipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0A8C87B12852D2D8001FD277 /* TestCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreData.swift; sourceTree = "<group>"; };
 		0E54D61528FCFD9E7F400301 /* Pods-RecipeBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeBrowser.debug.xcconfig"; path = "Target Support Files/Pods-RecipeBrowser/Pods-RecipeBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		247D746FA69B4D8C31E2D1A0 /* Pods_RecipeBrowser_RecipeBrowserUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeBrowser_RecipeBrowserUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECA8887F5D58FB243BB088A /* Pods_RecipeBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +129,6 @@
 				07220AFEF087823A1EBD0B36 /* Pods-RecipeBrowserTests.debug.xcconfig */,
 				8A94400042EBFF85A391D442 /* Pods-RecipeBrowserTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -172,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				0A67FC8A2850F05B007D76BD /* RecipeBrowserTests.swift */,
+				0A8C87B12852D2D8001FD277 /* TestCoreData.swift */,
 			);
 			path = RecipeBrowserTests;
 			sourceTree = "<group>";
@@ -517,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8C87B22852D2D8001FD277 /* TestCoreData.swift in Sources */,
 				0A67FC8B2850F05B007D76BD /* RecipeBrowserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
