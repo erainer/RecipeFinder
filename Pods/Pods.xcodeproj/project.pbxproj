@@ -80,7 +80,7 @@
 		494B509B56AF33C3C8748D131E4B569F /* Pods-RecipeBrowser-RecipeBrowserUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RecipeBrowser-RecipeBrowserUITests-dummy.m"; sourceTree = "<group>"; };
 		4B651BE1C26BECB37C9FA32CF46A9D34 /* Pods-RecipeBrowserTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecipeBrowserTests-Info.plist"; sourceTree = "<group>"; };
 		50E075E39D0A4E4E6DD8D4E921D7E74A /* ImageView+moa.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+moa.swift"; path = "Moa/ImageView+moa.swift"; sourceTree = "<group>"; };
-		520DD092E589910ED4B4C943FCA6AC3A /* moa */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = moa; path = moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		520DD092E589910ED4B4C943FCA6AC3A /* moa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = moa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55021E671569BFABCD25D21A43F39A67 /* moa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = moa.release.xcconfig; sourceTree = "<group>"; };
 		554C796AC035FD5B8467C403927FAECF /* Pods-RecipeBrowser-RecipeBrowserUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RecipeBrowser-RecipeBrowserUITests-frameworks.sh"; sourceTree = "<group>"; };
 		651A9B1C9E7EE2619390083CB7E94F30 /* MoaSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoaSettings.swift; path = Moa/MoaSettings.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		908B49B1B24829F690BC1F11AC1B7D1B /* Pods-RecipeBrowser-RecipeBrowserUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecipeBrowser-RecipeBrowserUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		95004295FEF77BA5C9299AF49C7C9252 /* Pods-RecipeBrowser-RecipeBrowserUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RecipeBrowser-RecipeBrowserUITests"; path = Pods_RecipeBrowser_RecipeBrowserUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0B0EF24468CA209159AF1035A44F1B /* Pods-RecipeBrowser-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RecipeBrowser-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A3C18C8CB44B50360CFD6E3FCAA5E7BE /* MoaImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MoaImageDownloader.swift; path = Moa/MoaImageDownloader.swift; sourceTree = "<group>"; };
 		A723A356A9BE247FA92C7839C400D5E8 /* Pods-RecipeBrowserTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RecipeBrowserTests-umbrella.h"; sourceTree = "<group>"; };
 		A74B86F7A599FA15FE891CF3658C19EA /* Pods-RecipeBrowser.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RecipeBrowser.modulemap"; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 		7B55E5C2F86F9F7BF392D9B04328905B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				520DD092E589910ED4B4C943FCA6AC3A /* moa */,
+				520DD092E589910ED4B4C943FCA6AC3A /* moa.framework */,
 				8095691BDB6AC93091F7E1BE14CD9A66 /* Pods-RecipeBrowser */,
 				95004295FEF77BA5C9299AF49C7C9252 /* Pods-RecipeBrowser-RecipeBrowserUITests */,
 				152F64E68FB62F01936CED2A7B7C567F /* Pods-RecipeBrowserTests */,
@@ -284,7 +284,6 @@
 				086DA4763AA275FDF5086B42143E664E /* MoaTime.swift */,
 				060EA82D3AD8BF2E80FBCE3A26D0EBDF /* Support Files */,
 			);
-			name = moa;
 			path = moa;
 			sourceTree = "<group>";
 		};
@@ -360,7 +359,7 @@
 			);
 			name = moa;
 			productName = moa;
-			productReference = 520DD092E589910ED4B4C943FCA6AC3A /* moa */;
+			productReference = 520DD092E589910ED4B4C943FCA6AC3A /* moa.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		33920C255D95C44348044D2426EA75BA /* Pods-RecipeBrowser */ = {
@@ -427,7 +426,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -646,7 +645,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/moa/moa-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/moa/moa-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -845,7 +844,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/moa/moa-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/moa/moa-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
