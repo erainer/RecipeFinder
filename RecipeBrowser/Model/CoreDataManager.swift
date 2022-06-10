@@ -7,11 +7,10 @@
 
 import CoreData
 
+// MARK: - CoreDataManager
 public class CoreDataManager {
     
     // MARK: - Properties
-    
-    // Shared singleton
     public static let shared = CoreDataManager()
     
     private init() {

@@ -12,6 +12,7 @@ enum MealDetailsType: String {
     case ingredients = "Ingredients and Measurements"
 }
 
+// MARK: - MealDetailsTableViewCell
 class MealDetailsTableViewCell: UITableViewCell {
 
     // MARK: - IBOutlets
@@ -29,6 +30,7 @@ class MealDetailsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Functions
     func setup(meal: Meal, detailType: MealDetailsType) {
         detailTitleLabel.text = detailType.rawValue
         var detailContents: String = ""

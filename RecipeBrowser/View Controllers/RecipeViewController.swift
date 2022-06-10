@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - RecipeViewController
 class RecipeViewController: UIViewController {
     
     // MARK: - IBOutlets
@@ -32,20 +33,6 @@ class RecipeViewController: UIViewController {
     }
     
     // MARK: - Functions
-    func loadImage(url: String) -> UIImage? {
-        guard let url = URL(string: url) else {
-            return nil
-        }
-        
-        do {
-            let data = try Data(contentsOf: url)
-            return UIImage(data: data) ?? nil
-        } catch let error as NSError {
-            print("Error: \(error.localizedDescription)")
-        }
-        
-        return nil
-    }
     
     // Sort recipes alphabetically
     func sortRecipesAlphabetically(recipes: [Recipe]) -> [Recipe] {
@@ -59,27 +46,24 @@ class RecipeViewController: UIViewController {
 
 // MARK: - TableViewDelegate
 extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    // Number of cells in the table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
     }
     
+    // Setup details for cell in table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = recipeTableView.dequeueReusableCell(withIdentifier: recipeCellIdentifier) as? RecipeTableViewCell else {
             return UITableViewCell()
         }
         
-        if let imageUrl =  recipes[indexPath.row].thumb,
-           let image = loadImage(url: imageUrl) {
-            cell.recipeImage.image = image
-        } else {
-            cell.recipeImage.image = UIImage(named: "image-not-found.png")
-        }
-        
-        cell.recipeNameLabel.text = recipes[indexPath.row].name
+        cell.setup(recipe: recipes[indexPath.row])
         
         return cell
     }
     
+    // Navigate to new view when table view row is selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let mealViewController = storyboard?.instantiateViewController(withIdentifier: "MealViewController") as? MealViewController {
             mealViewController.id = recipes[indexPath.row].id
@@ -87,6 +71,7 @@ extension RecipeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    // Table view row height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - MealViewController
 class MealViewController: UIViewController {
     
     // MARK: - IBOutlets
@@ -48,8 +49,8 @@ class MealViewController: UIViewController {
     
     func buildMealSections(mealDetails: Meal) {
         mealSections = []
-        // Image
-        if let cell = Bundle.main.loadNibNamed("MealImageTableViewCell", owner: self, options: nil)?.first as? MealImageTableViewCell {
+        if let _ = mealDetails.mealThumb,
+            let cell = Bundle.main.loadNibNamed("MealImageTableViewCell", owner: self, options: nil)?.first as? MealImageTableViewCell {
             cell.setup(meal: mealDetails)
             mealSections.append(cell)
         }

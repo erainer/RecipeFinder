@@ -15,6 +15,7 @@ struct Urls {
     static let MEAL_SERVICE = "/lookup.php?i="
 }
 
+// MARK: - NetworkLayer
 class NetworkLayer {
     
     // MARK: - Properties
@@ -108,15 +109,18 @@ class NetworkLayer {
     func parseRecipes(json: [String: AnyObject], completion: @escaping () -> ()) {
         if let recipes = json["meals"] as? [[String : AnyObject]] {
             
+            // Parse feilds for recipe entity
             for recipe in recipes {
                 
                 guard let id = recipe["idMeal"] as? String,
-                      let name = recipe["strMeal"] as? String,
-                      let thumb = recipe["strMealThumb"] as? String else {
+                      let name = recipe["strMeal"] as? String else {
                           completion()
                           return
                 }
                 
+                let thumb = recipe["strMealThumb"] as? String ?? ""
+                
+                // Create recipe entity to save into core data
                 if let recipeEntityDescription =
                     NSEntityDescription.entity(forEntityName: Recipe.entityName,
                                                in: context) {
@@ -125,7 +129,7 @@ class NetworkLayer {
                     recipeEntity.thumb = thumb
                     recipeEntity.name = name
                     
-                    synchonizeSaveCoreData()
+                    synchronizeSaveCoreData()
                 }
             }
         }
@@ -135,6 +139,7 @@ class NetworkLayer {
     
     // Parse meal json
     func parseMeals(json: [String: AnyObject], completion: @escaping () -> ()) {
+        // Parse feilds for meal entity
         if let meals = json["meals"] as? [[String : AnyObject]] {
             for meal in meals {
                 
@@ -142,12 +147,15 @@ class NetworkLayer {
                 var measurements: [String: String] = [:]
                 
                 meal.forEach { (key: String, value: AnyObject) in
+                    
+                    // Merge all ingredients into one variable
                     if key.contains("strIngredient"),
                        let ingredientValue = value as? String,
                        ingredientValue != "" {
                         ingredients[key] = ingredientValue
                     }
                     
+                    // Merge all measurements into one variable
                     if key.contains("strMeasure"),
                        let measureValue = value as? String {
                         let filterWhitespaceMeasure = measureValue.filter { !$0.isWhitespace }
@@ -157,14 +165,13 @@ class NetworkLayer {
                     }
                 }
                 
+                // Check to make sure there is a value for the core feilds
                 guard let id = meal["idMeal"] as? String,
                       let name = meal["strMeal"] as? String,
-                      let instructions = meal["strInstructions"] as? String,
-                      let thumb = meal["strMealThumb"] as? String else {
+                      let instructions = meal["strInstructions"] as? String else {
                           completion()
                           return
                 }
-                
                 
                 let drinkAlternate = meal["strDrinkAlternate"] as? String ?? ""
                 let category = meal["strCategory"] as? String ?? ""
@@ -174,7 +181,9 @@ class NetworkLayer {
                 let imgSource = meal["strSource"] as? String ?? ""
                 let creativeCommonsConfirmed = meal["strCreativeCommonsConfirmed"] as? String ?? ""
                 let dateModified = meal["dateModified"] as? String ?? ""
+                let thumb = meal["strMealThumb"] as? String ?? ""
                 
+                // Create entity for meal and save into core data
                 if let mealEntityDescription =
                     NSEntityDescription.entity(forEntityName: Meal.entityName,
                                                in: context) {
@@ -194,7 +203,7 @@ class NetworkLayer {
                     mealEntity.ingredients = ingredients
                     mealEntity.measurements = measurements
                     
-                    synchonizeSaveCoreData()
+                    synchronizeSaveCoreData()
                 }
             }
         }
@@ -202,12 +211,13 @@ class NetworkLayer {
         completion()
     }
     
-    func synchonizeSaveCoreData() {
+    // Synchronously save core data
+    func synchronizeSaveCoreData() {
         context.performAndWait {
             do {
                 try context.save()
             } catch {
-                print("Could not synchonize data. \(error), \(error.localizedDescription)")
+                print("Could not save into core data. \(error), \(error.localizedDescription)")
             }
         }
     }

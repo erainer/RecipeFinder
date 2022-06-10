@@ -1,0 +1,6 @@
+framework module Pods_RecipeBrowser {
+  umbrella header "Pods-RecipeBrowser-umbrella.h"
+
+  export *
+  module * { export * }
+}
